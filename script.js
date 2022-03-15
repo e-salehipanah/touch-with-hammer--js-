@@ -1,6 +1,5 @@
 "use strict";
 const box = document.querySelector("#box");
-<<<<<<< HEAD
 const hammerBox = new Hammer(box);
 hammerBox.on('panleft', function (ev) {
     box.classList.add('move-to-left');
@@ -15,10 +14,3 @@ hammerCard.on('panleft panright', function (event) {
         cardBack.classList.toggle("flipped");
     }
 });
-=======
-const hammer = new Hammer(box);
-// console.dir(hammer);
-hammer.on('panleft panright tap press', function (ev) {
-    console.log(ev);
-});
->>>>>>> b35121f18bb6ee5f091c45eda450734fc4a0cce2
