@@ -18,11 +18,12 @@ body {
     display:flex;
     justify-content:center;
     align-items:center;
+    transition: 0.5s all;
 }
 
-#box{
+#box h1{
     text-align: center;
-    transition: 0.5s all;
+    color: #fff;
 }
 
 .moved{
