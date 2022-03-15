@@ -1,69 +1,90 @@
-*{
-    box-sizing: border-box;
-    padding:0;
-    margin: 0;
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content:center;
-    align-items:center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#box{
-    width: 70%;
-    height: 100px;
-    background : #333;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    transition: 0.5s all;
+#box {
+  width: 70%;
+  height: 100px;
+  background: #333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s all;
 }
 
-#box h1{
-    text-align: center;
-    color: #fff;
+#box h1 {
+  text-align: center;
+  color: #fff;
 }
 
-.moved{
-    transform: translateX(-200px);
-    opacity: 0;
+.move-to-left {
+  transform: translateX(-200px);
+  opacity: 0;
 }
 
-
-.card{
-    width: 250px;
-    display: flex;
-    flex-direction: column;
-    margin-top: 10px;
-    background : #d3d3d3;
-    padding: 10px 5px0;
-    cursor: pointer;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: 0.5s all;
+.rotate-to-left {
+  transform: rotateY(180deg);
 }
 
-img{
-    width: 100%;       
+.card {
+  width: 250px;
+  height : 400px;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
 }
 
-.card__img{
-    width: 100%;       
+img {
+  width: 100%;
 }
 
-.card__text{
-    margin: 10px;
-    user-select: none; /* supported by Chrome and Opera */
--webkit-user-select: none; /* Safari */
--khtml-user-select: none; /* Konqueror HTML */
--moz-user-select: none; /* Firefox */
--ms-user-select: none;
+.card__img {
+  width: 100%;
 }
 
-.card__footer{
-    text-align: center;
+.card__text {
+  margin: 10px;
 }
 
+.card__footer {
+  text-align: center;
+}
+
+.card__front,
+.card__back {
+  height: 100%;
+  width: 100%;
+  transition: transform 0.5s ease;
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+.card__back {
+  transform: perspective(600px) rotateY(180deg);
+  background: #d3d3d3;
+}
+
+.card__back.flipped {
+    transform: perspective(600px) rotateY(0deg);
+}
+
+.card__front {
+    background: #d3d3d3;
+  transform: perspective(600px) rotateY(0deg);
+}
+
+.card__front.flipped {
+  transform: perspective(600px) rotateY(-180deg);
+}

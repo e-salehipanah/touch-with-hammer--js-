@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,22 +9,42 @@
     <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1">
     <title>Hammer.js</title>
 </head>
+
 <body>
     <div id="box">
         <h1>⬅⬅move me to the left</h1>
     </div>
     <div class="card">
-        <div class="card__img">
-            <img src="http://placeimg.com/640/480/transport" alt="">
+        <div class="card__front">
+            <div class="card__img">
+                <img src="http://placeimg.com/640/480/transport" alt="">
+            </div>
+            <div class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias quaerat quia corporis illo
+                praesentium, libero obcaecati! Veritatis voluptas excepturi consequatur unde, suscipit repellendus
+                possimus.
+            </div>
+            <div class="card__footer">
+                ⬅move➡
+            </div>
         </div>
-        <div class="card__text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias quaerat quia corporis illo praesentium, libero obcaecati! Veritatis voluptas excepturi consequatur unde, suscipit repellendus possimus.
+        <div class="card__back">
+            <div class="card__img">
+                <img src='http://unsplash.it/g/640/480?random&blur&gravity=center' alt=''/> 
+            </div>
+            <div class="card__text">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus alias quaerat quia corporis illo
+                praesentium, libero obcaecati! Veritatis voluptas excepturi consequatur unde, suscipit repellendus
+                possimus.
+            </div>
+            <div class="card__footer">
+                ⬅move➡
+            </div>
         </div>
-        <div class="card__footer">
-            ⬅move➡
         </div>
     </div>
-    <script src="./hammer.min.js"></script>
+    <script src="https://hammerjs.github.io/dist/hammer.js"></script>
     <script src="./script.js"></script>
 </body>
+
 </html>
