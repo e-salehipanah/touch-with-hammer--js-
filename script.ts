@@ -1,10 +1,21 @@
-const box = document.querySelector("#box")
-const hammer = new Hammer(box);
+"use strict";
+const box = document.querySelector("#box");
+const hammerBox = new Hammer(box);
+hammerBox.on('panleft', function (ev:object) {
+    box.classList.add('move-to-left')
+});
 
-// console.dir(hammer);
 
-hammer.on('panleft panright tap press',function(ev){
-    console.log(ev);
-    
-})
 
+const card = document.querySelector(".card");
+const cardFront  = document.querySelector(".card__front");
+const cardBack  = document.querySelector(".card__back");
+
+
+const hammerCard = new Hammer(card);
+hammerCard.on('panleft panright', function (event) {
+    if(event.deltaX>300 || event.deltaX < -300){
+        cardFront.classList.toggle("flipped")
+        cardBack.classList.toggle("flipped")
+    }
+});
